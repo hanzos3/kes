@@ -82,7 +82,7 @@
       }
     ]
   },
-  "description": "KES Grafana Dashboard - https://min.io/",
+  "description": "KES Grafana Dashboard - https://hanzo.ai/",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "gnetId": 13502,
@@ -94,7 +94,7 @@
       "includeVars": true,
       "keepTime": true,
       "tags": [
-        "minio"
+        "hanzos3"
       ],
       "type": "dashboards"
     }
@@ -1045,7 +1045,7 @@
   "refresh": "",
   "schemaVersion": 39,
   "tags": [
-    "minio"
+    "hanzos3"
   ],
   "templating": {
     "list": [

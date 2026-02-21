@@ -1,4 +1,4 @@
-// Copyright 2019 - MinIO, Inc. All rights reserved.
+// Copyright 2019 - Hanzo AI, Inc. All rights reserved.
 // Use of this source code is governed by the AGPLv3
 // license that can be found in the LICENSE file.
 
@@ -112,7 +112,7 @@ func main() {
 		fmt.Fprintf(buf, "Version    %-22s %s\n", info.Version, faint.Render("commit="+info.CommitID))
 		fmt.Fprintf(buf, "Runtime    %-22s %s\n", fmt.Sprintf("%s %s/%s", info.Runtime, runtime.GOOS, runtime.GOARCH), faint.Render("compiler="+info.Compiler))
 		fmt.Fprintf(buf, "License    %-22s %s\n", "AGPLv3", faint.Render("https://www.gnu.org/licenses/agpl-3.0.html"))
-		fmt.Fprintf(buf, "Copyright  %-22s %s\n", fmt.Sprintf("2015-%d MinIO Inc.", time.Now().Year()), faint.Render("https://min.io"))
+		fmt.Fprintf(buf, "Copyright  %-22s %s\n", fmt.Sprintf("2015-%d Hanzo AI, Inc.", time.Now().Year()), faint.Render("https://hanzo.ai"))
 		fmt.Print(buf.String())
 		return
 	}

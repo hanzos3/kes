@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-  - name: MinIO Community Support
-    url: https://slack.min.io
+  - name: Hanzo S3 Community Support
+    url: https://github.com/hanzos3/kes/discussions
     about: Join here for Community Support.
-  - name: MinIO SUBNET Support
-    url: https://min.io/pricing
-    about: Join here for Enterprise Support.
+  - name: Hanzo AI Enterprise Support
+    url: https://hanzo.ai
+    about: Contact us for Enterprise Support.

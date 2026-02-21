@@ -49,13 +49,13 @@ Fixes #102
 ### License
 
 KES is an opensource project licensed under AGPLv3. The license file
-can be found [here](https://github.com/minio/kes/blob/master/LICENSE).
+can be found [here](https://github.com/hanzos3/kes/blob/master/LICENSE).
 
-By contributing to KES, you agree to assign the copyright to MinIO.
+By contributing to KES, you agree to assign the copyright to Hanzo AI, Inc..
 Any contributed source file must include the following license
 header:
 ```
-// Copyright <YEAR> - MinIO, Inc. All rights reserved.
+// Copyright <YEAR> - Hanzo AI, Inc. All rights reserved.
 // Use of this source code is governed by the AGPLv3
 // license that can be found in the LICENSE file.
  ```

@@ -6,9 +6,9 @@ FROM registry.access.redhat.com/ubi9/ubi-micro:9.5
 
 ARG TAG
 
-LABEL name="MinIO" \
-      vendor="MinIO Inc <dev@min.io>" \
-      maintainer="MinIO Inc <dev@min.io>" \
+LABEL name="Hanzo S3" \
+      vendor="Hanzo AI, Inc. <dev@hanzo.ai>" \
+      maintainer="Hanzo AI, Inc. <dev@hanzo.ai>" \
       version="${TAG}" \
       release="${TAG}" \
       summary="KES is a cloud-native distributed key management and encryption server designed to build zero-trust infrastructures at scale."

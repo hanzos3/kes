@@ -1,4 +1,4 @@
-// Copyright 2021 - MinIO, Inc. All rights reserved.
+// Copyright 2021 - Hanzo AI, Inc. All rights reserved.
 // Use of this source code is governed by the AGPLv3
 // license that can be found in the LICENSE file.
 
@@ -87,7 +87,7 @@ func updateCmd(args []string) {
 
 	const (
 		Latest      = "latest"
-		DownloadURL = "https://github.com/minio/kes/releases/download/%s/kes-%s-%s"
+		DownloadURL = "https://github.com/hanzos3/kes/releases/download/%s/kes-%s-%s"
 	)
 	var publicKey minisign.PublicKey
 	if err := publicKey.UnmarshalText([]byte(minisignKey)); err != nil {
@@ -127,7 +127,7 @@ func updateCmd(args []string) {
 	if n := cmd.NArg(); n == 0 || n == 1 && cmd.Arg(0) == Latest {
 		const (
 			MaxBody   = 5 * mem.MiB
-			LatestURL = "https://api.github.com/repos/minio/kes/releases/latest"
+			LatestURL = "https://api.github.com/repos/hanzos3/kes/releases/latest"
 			Tag       = "tag_name"
 		)
 		req, err := http.NewRequestWithContext(ctx, http.MethodGet, LatestURL, nil)
@@ -177,7 +177,7 @@ func updateCmd(args []string) {
 	// We have to download the KES binary and the corresponding minisign signature
 	// file. We start with the signature.
 	binaryURL, err := url.JoinPath(
-		"https://github.com/minio/kes/releases/download/",
+		"https://github.com/hanzos3/kes/releases/download/",
 		fmt.Sprintf("v%v", version),
 		fmt.Sprintf("kes-%s-%s", osFlag, archFlag),
 	)

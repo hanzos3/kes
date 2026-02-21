@@ -1,4 +1,4 @@
-// Copyright 2023 - MinIO, Inc. All rights reserved.
+// Copyright 2023 - Hanzo AI, Inc. All rights reserved.
 // Use of this source code is governed by the AGPLv3
 // license that can be found in the LICENSE file.
 
@@ -30,8 +30,8 @@ func TestValidPattern(t *testing.T) {
 func BenchmarkValidName(b *testing.B) {
 	const (
 		EmptyName   = ""
-		ValidName   = "my-minio-key"
-		InvalidName = "my-minio-key*"
+		ValidName   = "my-test-key"
+		InvalidName = "my-test-key*"
 	)
 
 	b.Run("empty", func(b *testing.B) {
@@ -54,8 +54,8 @@ func BenchmarkValidName(b *testing.B) {
 func BenchmarkValidPattern(b *testing.B) {
 	const (
 		MatchAll       = "*"
-		ValidPattern   = "my-minio-key*"
-		InvalidPattern = "my-minio-key/"
+		ValidPattern   = "my-test-key*"
+		InvalidPattern = "my-test-key/"
 	)
 
 	b.Run("matchall", func(b *testing.B) {

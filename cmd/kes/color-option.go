@@ -1,4 +1,4 @@
-// Copyright 2022 - MinIO, Inc. All rights reserved.
+// Copyright 2022 - Hanzo AI, Inc. All rights reserved.
 // Use of this source code is governed by the AGPLv3
 // license that can be found in the LICENSE file.
 

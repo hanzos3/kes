@@ -1,6 +1,6 @@
 # Release versioning
 
-KES server is released with time based version tags, similar to MinIO server.
+KES server is released with time based version tags, similar to Hanzo S3 server.
 
 To get the release name in the appropriate format, run the following with the code checked out at the desired revision:
 

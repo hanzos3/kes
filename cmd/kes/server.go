@@ -1,4 +1,4 @@
-// Copyright 2019 - MinIO, Inc. All rights reserved.
+// Copyright 2019 - Hanzo AI, Inc. All rights reserved.
 // Use of this source code is governed by the AGPLv3
 // license that can be found in the LICENSE file.
 
@@ -52,13 +52,13 @@ Options:
     -h, --help               Show list of command-line options
 
 
-MinIO KES is a high-performance distributed key management server.
+Hanzo S3 KES is a high-performance distributed key management server.
 It is a stateless, self-contained server that uses a separate key
 store as persistence layer. KES servers can be added or removed at
 any point in time to scale out infinitely.
 
-   Quick Start: https://github.com/minio/kes#quick-start
-   Docs:        https://min.io/docs/kes/
+   Quick Start: https://github.com/hanzos3/kes#quick-start
+   Docs:        https://github.com/hanzos3/kes/
 	
 Examples:
   1. Start a new KES server on '127.0.0.1:7373' in development mode.
@@ -198,7 +198,7 @@ func startServer(addrFlag, configFlag string) error {
 		fmt.Fprintf(buf, "%-33s %-23s %s\n", blue.Render("Version"), info.Version, faint.Render("commit="+info.CommitID))
 		fmt.Fprintf(buf, "%-33s %-23s %s\n", blue.Render("Runtime"), fmt.Sprintf("%s %s/%s", info.Runtime, runtime.GOOS, runtime.GOARCH), faint.Render("compiler="+info.Compiler))
 		fmt.Fprintf(buf, "%-33s %-23s %s\n", blue.Render("License"), "AGPLv3", faint.Render("https://www.gnu.org/licenses/agpl-3.0.html"))
-		fmt.Fprintf(buf, "%-33s %-12s 2015-%d  %s\n", blue.Render("Copyright"), "MinIO, Inc.", time.Now().Year(), faint.Render("https://min.io"))
+		fmt.Fprintf(buf, "%-33s %-12s 2015-%d  %s\n", blue.Render("Copyright"), "Hanzo AI, Inc.", time.Now().Year(), faint.Render("https://hanzo.ai"))
 		fmt.Fprintln(buf)
 		fmt.Fprintf(buf, "%-33s %v\n", blue.Render("KMS"), conf.Keys)
 		fmt.Fprintf(buf, "%-33s · https://%s\n", blue.Render("API"), net.JoinHostPort(ifaceIPs[0].String(), port))
@@ -207,7 +207,7 @@ func startServer(addrFlag, configFlag string) error {
 		}
 
 		fmt.Fprintln(buf)
-		fmt.Fprintf(buf, "%-33s https://min.io/docs/kes\n", blue.Render("Docs"))
+		fmt.Fprintf(buf, "%-33s https://github.com/hanzos3/kes\n", blue.Render("Docs"))
 
 		fmt.Fprintln(buf)
 		if _, err := hex.DecodeString(conf.Admin.String()); err == nil {
@@ -363,7 +363,7 @@ func startDevServer(addr string) error {
 	fmt.Fprintf(buf, "%-33s %-23s %s\n", blue.Render("Version"), info.Version, faint.Render("commit="+info.CommitID))
 	fmt.Fprintf(buf, "%-33s %-23s %s\n", blue.Render("Runtime"), fmt.Sprintf("%s %s/%s", info.Runtime, runtime.GOOS, runtime.GOARCH), faint.Render("compiler="+info.Compiler))
 	fmt.Fprintf(buf, "%-33s %-23s %s\n", blue.Render("License"), "AGPLv3", faint.Render("https://www.gnu.org/licenses/agpl-3.0.html"))
-	fmt.Fprintf(buf, "%-33s %-12s 2015-%d  %s\n", blue.Render("Copyright"), "MinIO, Inc.", time.Now().Year(), faint.Render("https://min.io"))
+	fmt.Fprintf(buf, "%-33s %-12s 2015-%d  %s\n", blue.Render("Copyright"), "Hanzo AI, Inc.", time.Now().Year(), faint.Render("https://hanzo.ai"))
 	fmt.Fprintln(buf)
 	fmt.Fprintf(buf, "%-33s %v\n", blue.Render("KMS"), conf.Keys)
 	fmt.Fprintf(buf, "%-33s · https://%s\n", blue.Render("API"), net.JoinHostPort(ifaceIPs[0].String(), port))
@@ -371,7 +371,7 @@ func startDevServer(addr string) error {
 		fmt.Fprintf(buf, "%-11s · https://%s\n", " ", net.JoinHostPort(ifaceIP.String(), port))
 	}
 	fmt.Fprintln(buf)
-	fmt.Fprintf(buf, "%-33s https://min.io/docs/kes\n", blue.Render("Docs"))
+	fmt.Fprintf(buf, "%-33s https://github.com/hanzos3/kes\n", blue.Render("Docs"))
 	fmt.Fprintln(buf)
 	fmt.Fprintf(buf, "%-33s %s\n", blue.Render("API Key"), apiKey.String())
 	fmt.Fprintf(buf, "%-33s %s\n", blue.Render("Admin"), apiKey.Identity())
@@ -389,7 +389,7 @@ func startDevServer(addr string) error {
 }
 
 // configureCache sets default values for each cache config option
-// as documented in: https://github.com/minio/kes/blob/master/server-config.yaml
+// as documented in: https://github.com/hanzos3/kes/blob/master/server-config.yaml
 func configureCache(c *kes.CacheConfig) *kes.CacheConfig {
 	if c == nil {
 		c = &kes.CacheConfig{}
