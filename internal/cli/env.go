@@ -9,21 +9,19 @@ import (
 )
 
 // Environment variables used by the KES CLI.
-// Note: The MINIO_KES_* env var names are kept for backward compatibility
-// as they are read by the server and existing deployments.
 const (
 	// EnvServer is the server endpoint the client uses. If not set,
 	// clients will use '127.0.0.1:7373'.
-	EnvServer = "MINIO_KES_SERVER"
+	EnvServer = "S3_KES_SERVER"
 
 	// EnvAPIKey is used by the client to authenticate to the server.
-	EnvAPIKey = "MINIO_KES_API_KEY"
+	EnvAPIKey = "S3_KES_API_KEY"
 
 	// EnvPrivateKey is the path to the client private key file.
-	EnvPrivateKey = "MINIO_KES_KEY_FILE"
+	EnvPrivateKey = "S3_KES_KEY_FILE"
 
 	// EnvCertificate is the path to the client certificate file.
-	EnvCertificate = "MINIO_KES_CERT_FILE"
+	EnvCertificate = "S3_KES_CERT_FILE"
 )
 
 // Env retrieves the value of the environment variable named by the key.
@@ -34,8 +32,8 @@ func Env(key string) string {
 		return os.Getenv(key)
 	case EnvServer:
 		const (
-			EnvServerLegacy  = "KES_SERVER"
-			EnvServerMinIO   = "MINIO_KMS_KES_ENDPOINT" // kept for backward compatibility
+			EnvServerLegacy = "KES_SERVER"
+			EnvServerS3     = "S3_KMS_KES_ENDPOINT"
 			DefaultServer   = "127.0.0.1:7373"
 		)
 		if s, ok := os.LookupEnv(EnvServer); ok {
@@ -44,15 +42,15 @@ func Env(key string) string {
 		if s, ok := os.LookupEnv(EnvServerLegacy); ok {
 			return s
 		}
-		if s, ok := os.LookupEnv(EnvServerMinIO); ok {
+		if s, ok := os.LookupEnv(EnvServerS3); ok {
 			return s
 		}
 		return DefaultServer
 
 	case EnvAPIKey:
 		const (
-			EnvAPIKeyLegacy  = "KES_API_KEY"
-			EnvAPIKeyMinIO   = "MINIO_KMS_KES_API_KEY" // kept for backward compatibility
+			EnvAPIKeyLegacy = "KES_API_KEY"
+			EnvAPIKeyS3     = "S3_KMS_KES_API_KEY"
 		)
 		if s, ok := os.LookupEnv(EnvAPIKey); ok {
 			return s
@@ -60,15 +58,15 @@ func Env(key string) string {
 		if s, ok := os.LookupEnv(EnvAPIKeyLegacy); ok {
 			return s
 		}
-		if s, ok := os.LookupEnv(EnvAPIKeyMinIO); ok {
+		if s, ok := os.LookupEnv(EnvAPIKeyS3); ok {
 			return s
 		}
 		return ""
 
 	case EnvPrivateKey:
 		const (
-			EnvPrivateKeyLegacy  = "KES_CLIENT_KEY"
-			EnvPrivateKeyMinIO   = "MINIO_KES_CLIENT_KEY" // kept for backward compatibility
+			EnvPrivateKeyLegacy = "KES_CLIENT_KEY"
+			EnvPrivateKeyS3     = "S3_KES_CLIENT_KEY"
 		)
 		if s, ok := os.LookupEnv(EnvPrivateKey); ok {
 			return s
@@ -76,15 +74,15 @@ func Env(key string) string {
 		if s, ok := os.LookupEnv(EnvPrivateKeyLegacy); ok {
 			return s
 		}
-		if s, ok := os.LookupEnv(EnvPrivateKeyMinIO); ok {
+		if s, ok := os.LookupEnv(EnvPrivateKeyS3); ok {
 			return s
 		}
 		return ""
 
 	case EnvCertificate:
 		const (
-			EnvCertificateLegacy  = "KES_CLIENT_CERT"
-			EnvCertificateMinIO   = "MINIO_KES_CLIENT_CERT" // kept for backward compatibility
+			EnvCertificateLegacy = "KES_CLIENT_CERT"
+			EnvCertificateS3     = "S3_KES_CLIENT_CERT"
 		)
 		if s, ok := os.LookupEnv(EnvCertificate); ok {
 			return s
@@ -92,7 +90,7 @@ func Env(key string) string {
 		if s, ok := os.LookupEnv(EnvCertificateLegacy); ok {
 			return s
 		}
-		if s, ok := os.LookupEnv(EnvCertificateMinIO); ok {
+		if s, ok := os.LookupEnv(EnvCertificateS3); ok {
 			return s
 		}
 		return ""

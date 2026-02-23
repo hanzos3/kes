@@ -25,9 +25,9 @@ const lsUsage = `Usage:
 
 Options:
     -a, --api-key KEY           API key to authenticate to the KES server.
-                                Defaults to $MINIO_KES_API_KEY.
+                                Defaults to $S3_KES_API_KEY.
     -s, --server HOST[:PORT]    Use the server HOST[:PORT] instead of
-                                $MINIO_KES_SERVER.
+                                $S3_KES_SERVER.
         --json                  Print output in JSON format.
     -i, --identity              List identities.
     -p, --policy                List policy names.

@@ -34,11 +34,11 @@ Options:
     --to   <PATH>            Path to target KES config file.
 
     -s, --server HOST        KMS server endpoint to which keys are migrated.
-                             Defaults to the value of $MINIO_KMS_SERVER
+                             Defaults to the value of $S3_KMS_SERVER
     -e, --enclave ENCLAVE    KMS enclave endpoint to which keys are migrated.
-                             Defaults to the value of $MINIO_KMS_ENCLAVE
+                             Defaults to the value of $S3_KMS_ENCLAVE
     -a, --api-key KEY        KMS API key used to authenticate to the KMS server.
-                             Defaults to the value of $MINIO_KMS_API_KEY
+                             Defaults to the value of $S3_KMS_API_KEY
     -k, --insecure           Skip KMS server certificate verification.
 
     -f, --force              Migrate keys even if a key with the same name exists
@@ -68,9 +68,9 @@ func migrate(args []string) {
 	flags.BoolVar(&merge, "merge", false, "")
 	flags.StringVar(&fromPath, "from", "", "")
 	flags.StringVar(&toPath, "to", "", "")
-	flags.StringVarP(&kmsServer, "server", "s", cli.Env("MINIO_KMS_SERVER"), "")
-	flags.StringVarP(&kmsEnclave, "enclave", "e", cli.Env("MINIO_KMS_ENCLAVE"), "")
-	flags.StringVarP(&kmsAPIKey, "api-key", "a", cli.Env("MINIO_KMS_API_KEY"), "")
+	flags.StringVarP(&kmsServer, "server", "s", cli.Env("S3_KMS_SERVER"), "")
+	flags.StringVarP(&kmsEnclave, "enclave", "e", cli.Env("S3_KMS_ENCLAVE"), "")
+	flags.StringVarP(&kmsAPIKey, "api-key", "a", cli.Env("S3_KMS_API_KEY"), "")
 	if err := flags.Parse(args[1:]); err != nil {
 		if errors.Is(err, flag.ErrHelp) {
 			os.Exit(2)
